@@ -2,14 +2,13 @@
 
 import 'dart:collection';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class select_counsellor extends StatefulWidget {
   final String name;
+  final String image;
   // final ValueChanged<bool> isSelected;
-  const select_counsellor({super.key, required this.name});
+  const select_counsellor({super.key, required this.name, required this.image});
 
   @override
   State<select_counsellor> createState() => _select_counsellorState();
@@ -43,10 +42,7 @@ class _select_counsellorState extends State<select_counsellor> {
               CircleAvatar(
                 backgroundColor: Color(0xffE6E6E6),
                 radius: 24,
-                child: Icon(
-                  Icons.person,
-                  color: Color(0xffCCCCCC),
-                ),
+                backgroundImage: AssetImage(widget.image),
               ),
               SizedBox(width: 16),
               Column(
@@ -57,7 +53,7 @@ class _select_counsellorState extends State<select_counsellor> {
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                   ),
                   Text(

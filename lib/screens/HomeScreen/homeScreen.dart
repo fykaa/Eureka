@@ -31,10 +31,9 @@ class _homeScreenState extends State<homeScreen> {
               ListTile(
                 horizontalTitleGap: 1,
                 leading: CircleAvatar(
-                    radius: 50,
-                    child: Icon(
-                      Icons.person,
-                    )),
+                  radius: 50,
+                  backgroundImage: AssetImage("assets/images/student.jpg"),
+                ),
                 title: Text(
                   'Hey User!',
                   style: TextStyle(
@@ -232,7 +231,7 @@ class _homeScreenState extends State<homeScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: snapshot.data!.docs
-                            .map((events) => event("e", events))
+                            .map((events) => event(events))
                             .toList(),
                       ),
                     );
@@ -268,7 +267,7 @@ class _homeScreenState extends State<homeScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: snapshot.data!.docs
-                            .map((blogs) => event("b", blogs))
+                            .map((blogs) => event(blogs))
                             .toList(),
                       ),
                     );

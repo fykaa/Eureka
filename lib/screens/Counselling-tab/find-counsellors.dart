@@ -15,6 +15,15 @@ class find_counsellors extends StatefulWidget {
 }
 
 class _find_counsellorsState extends State<find_counsellors> {
+  List<String> images = [
+    'assets/images/couns_1.jpg',
+    'assets/images/couns_2.jpg',
+    'assets/images/couns_3.jpg',
+    'assets/images/couns_4.jpg',
+    'assets/images/couns_5.jpg',
+    'assets/images/couns_6.jpg',
+  ];
+
   CollectionReference counsellor_location =
       FirebaseFirestore.instance.collection("Counsellors");
 
@@ -70,10 +79,7 @@ class _find_counsellorsState extends State<find_counsellors> {
                 CircleAvatar(
                   backgroundColor: Color(0xffE6E6E6),
                   radius: 24,
-                  child: Icon(
-                    Icons.person,
-                    color: Color(0xffCCCCCC),
-                  ),
+                  backgroundImage: AssetImage("assets/images/student.jpg"),
                 ),
               ],
             ),
@@ -109,6 +115,7 @@ class _find_counsellorsState extends State<find_counsellors> {
                                 AsyncSnapshot<List<dynamic>> snapshot) {
                               // print(snapshot.data);
                               var length_location = snapshot.data?[0]['Name'];
+
                               return ListView.builder(
                                 itemCount: length_location?.length,
                                 // itemCount: counsellors.length,
@@ -123,19 +130,7 @@ class _find_counsellorsState extends State<find_counsellors> {
                                       padding: EdgeInsets.only(right: 20),
                                       child: select_counsellor(
                                         name: length_location[index],
-                                        // isSelected: (bool value) {
-                                        //   setState(() {
-                                        //     if (value) {
-                                        //       // selected_items
-                                        //       //     .add(length_location[index]);
-                                        //     } else {
-                                        //       // selectedList
-                                        //       //     .remove(length_location[index]);
-                                        //     }
-                                        //   });
-                                        // },
-                                        // key: Key(
-                                        //     length_location[index].toString()),
+                                        image: images[index],
                                       ),
                                     ),
                                   );

@@ -34,7 +34,7 @@ class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SplashScreen(
-      seconds: 20,
+      seconds: 10,
       backgroundColor: Color(0xFFD3F36B),
       navigateAfterSeconds: new MyHomePage(title: 'Flutter Demo Home Page'),
       title: new Text(
@@ -42,7 +42,7 @@ class Splash extends StatelessWidget {
         textScaleFactor: 2,
         textAlign: TextAlign.center,
         style: TextStyle(
-            color: Colors.green,
+            color: Colors.deepPurple,
             fontSize: 8,
             fontStyle: FontStyle.italic,
             fontWeight: FontWeight.w600),

@@ -39,7 +39,7 @@ class _search_counsellorsState extends State<search_counsellors> {
               IconButton(
                 padding: EdgeInsets.only(right: 320),
                 icon: Icon(Icons.arrow_back),
-                color: Colors.white,
+                color: Colors.black,
                 onPressed: () => Navigator.push(context,
                     MaterialPageRoute(builder: (context) => HomeBottomBar())),
               ),
@@ -70,7 +70,7 @@ class _search_counsellorsState extends State<search_counsellors> {
               Text(
                 "Enter your location to find counselors near you",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 13,
                   fontWeight: FontWeight.bold,
                 ),
@@ -97,7 +97,7 @@ class _search_counsellorsState extends State<search_counsellors> {
                             BorderSide(color: Color.fromRGBO(0, 0, 0, 1)),
                       ),
                       hintText: "ex: Pune",
-                      hintStyle: TextStyle(color: Colors.white),
+                      hintStyle: TextStyle(color: Colors.black),
                       suffixIcon: IconButton(
                         // onPressed: _loginemailcontroller.clear,
                         onPressed: () {},

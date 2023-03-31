@@ -10,6 +10,15 @@ class counsellors_notif extends StatefulWidget {
 }
 
 class _counsellors_notifState extends State<counsellors_notif> {
+  List<String> images = [
+    'assets/images/couns_1.jpg',
+    'assets/images/couns_2.jpg',
+    'assets/images/couns_3.jpg',
+    'assets/images/couns_4.jpg',
+    'assets/images/couns_5.jpg',
+    'assets/images/couns_6.jpg',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,10 +57,7 @@ class _counsellors_notifState extends State<counsellors_notif> {
                 CircleAvatar(
                   backgroundColor: Color(0xffE6E6E6),
                   radius: 24,
-                  child: Icon(
-                    Icons.person,
-                    color: Color(0xffCCCCCC),
-                  ),
+                  backgroundImage: AssetImage("assets/images/student.jpg"),
                 ),
               ],
             ),
@@ -93,6 +99,7 @@ class _counsellors_notifState extends State<counsellors_notif> {
                             padding: EdgeInsets.only(right: 20),
                             child: notification(
                               name: snapshot.data?.docs[index]["Name"],
+                              image: images[index],
                             ),
                           ),
                         );

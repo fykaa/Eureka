@@ -17,7 +17,7 @@ class ProfileScreen extends StatelessWidget {
             width: 80,
             margin: EdgeInsets.only(top: 10),
             child: CircleAvatar(
-              child: Icon(Icons.person),
+              backgroundImage: AssetImage("assets/images/student.jpg"),
             ),
           ),
           SizedBox(height: 15),

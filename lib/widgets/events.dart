@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-Widget event(String type, QueryDocumentSnapshot doc) {
+Widget event(QueryDocumentSnapshot doc) {
   _launchURLBrowser() async {
     var _url = Uri.parse(doc["event_website"]);
 
@@ -19,9 +19,7 @@ Widget event(String type, QueryDocumentSnapshot doc) {
           borderRadius: BorderRadius.circular(12),
           color: Color(0xFFAED530),
           image: DecorationImage(
-            image: type == "e"
-                ? AssetImage('assets/images/events.jpg')
-                : AssetImage('assets/images/blog.jpg'),
+            image: NetworkImage(doc['event_image']),
             fit: BoxFit.fill,
           ),
         ),

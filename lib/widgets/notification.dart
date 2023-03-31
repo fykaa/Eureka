@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 
 class notification extends StatefulWidget {
   final String name;
+  final String image;
 
-  const notification({super.key, required this.name});
+  const notification({super.key, required this.name, required this.image});
 
   @override
   State<notification> createState() => _notificationState();
@@ -25,10 +26,7 @@ class _notificationState extends State<notification> {
                 child: CircleAvatar(
                   backgroundColor: Color(0xffE6E6E6),
                   radius: 24,
-                  child: Icon(
-                    Icons.person,
-                    color: Color(0xffCCCCCC),
-                  ),
+                  backgroundImage: AssetImage(widget.image),
                 ),
               ),
 
@@ -38,7 +36,7 @@ class _notificationState extends State<notification> {
               Text(
                 widget.name,
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
@@ -58,7 +56,7 @@ class _notificationState extends State<notification> {
           Padding(
             padding: EdgeInsets.only(left: 71),
             child: Text(
-              "Hi, this is Ankit. Feel free to reach out to me for counselling.",
+              "Hi! Feel free to reach out to me for counselling.",
               style: TextStyle(
                 color: Color(0xFF5E6272),
                 fontSize: 13,

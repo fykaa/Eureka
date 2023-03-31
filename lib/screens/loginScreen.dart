@@ -125,10 +125,10 @@ class _loginScreenState extends State<loginScreen> {
         ),
         Positioned(
             top: 420,
-            left: 105,
+            left: 115,
             child: Row(
               children: [
-                Text("New to [appname]?"),
+                Text("New to Eureka?"),
                 TextButton(
                     onPressed: () {
                       Navigator.push(
